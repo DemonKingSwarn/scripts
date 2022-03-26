@@ -1,0 +1,16 @@
+#!/bin/sh
+
+sec=0
+
+update_weather() {
+	weather="$(curl -s "wttr.in?format=1"| sed -E "s/^(.).*\+/\1/")"
+	echo "$weather"
+}
+
+while true
+do
+	sleep 1 & wait && {
+		[ $((sec % 3600)) -eq 2 ] && update_weather
+		sec=$((sec + 1))
+	}
+done

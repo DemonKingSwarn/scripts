@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+SCRIPT_DIR=$(dirname "$(readlink -f -- "$0")")
+
+chosen=$(sed 's/\s-\s.*//' "$SCRIPT_DIR/unicode.txt" | rofi -dmenu)
+[ -z "$chosen" ] && exit
+
+grep "$chosen" "$SCRIPT_DIR/unicode.txt" | head -1 | sed 's/.*-\s//' | xclip -sel c
+

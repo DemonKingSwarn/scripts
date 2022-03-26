@@ -1,0 +1,17 @@
+Arabic
+Chinese
+English
+French
+German
+Hindi
+Indonesian
+Irish
+Italian
+Japanese
+Korean
+Polish
+Portuguese
+Russian
+Spanish
+Turkish
+Vietnamese

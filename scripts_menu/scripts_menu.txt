@@ -1,0 +1,16 @@
+../unicode/unicode
+../bookmarks/bookmarks
+../reddit_images/reddit_images
+../misc/wificon
+../custom_emoji/subscripts/matrixrun
+../0x0/share
+../0x0/pastebin
+../misc/radio
+../misc/music
+../misc/ani-dmenu
+../misc/recordscreen
+../misc/playvideo
+../misc/imagesaver
+../misc/invidious_copy
+../misc/waldl
+../system/shutdownscript

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+while true;
+do
+	sleep 5m;
+	maim /tmp/ss.png
+	x=$(convert /tmp/ss.png -colorspace RGB -format %c histogram:info:- | awk '{sub(":","",$1); split($2,c,"[,()]"); pixels+=$1; w+=$1*(c[2]+c[3]+c[4])/765} END { print w/pixels*100 }' | cut -d'.' -f1)
+
+	if [ "$x" -gt 40 ] ; then
+		notify-send "Work on dark mode please."
+	fi
+done

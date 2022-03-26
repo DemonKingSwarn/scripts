@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+mpv $(xclip -sel c -o)

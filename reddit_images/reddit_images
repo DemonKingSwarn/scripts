@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+cachedir=/tmp
+
+sub=$(rofi -dmenu -p "Enter Sub:")
+curl -H "User-agent: 'Bot'" "https://www.reddit.com/r/$sub/hot.json?limit=50" > "$cachedir/spamsub.json"
+# Create a list of images
+jq '.' < "$cachedir/spamsub.json" | grep url_overridden_by_dest | grep -Eo "http(s|)://.*(jpg|png)\b" | sort -u | xclip -sel c
+

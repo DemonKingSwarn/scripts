@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+
+menu() {
+	printf "No\n"
+	printf "Yes\n"
+}
+
+choice=$(menu | dmenu -p "Shutdown?")
+
+
+case $choice in
+	"No")
+		exit 1
+		;;
+	"Yes")
+		shutdown
+		exit 1
+		;;
+	*)
+		notify-send "nothing selected" && exit 1
+		;;
+esac

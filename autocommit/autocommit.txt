@@ -1,0 +1,2 @@
+~/dox/code/ytplayer/
+~/.emacs.d/

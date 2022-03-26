@@ -1,0 +1,4 @@
+#!/bin/bash
+
+$(printf "No\nYes" | dmenu -i -p "$1")
+

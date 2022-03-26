@@ -1,0 +1,144 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+_path="$(cd "$(dirname "${BASH_SOURCE[0]}")" && cd "$(dirname "$(readlink "${BASH_SOURCE[0]}" || echo ".")")" && pwd)"
+
+
+menu() {
+	printf "Quit\n"
+	printf "1. 50s Rewind\n"
+	printf "2. 60s Rewind\n"
+	printf "3. 70s Rewind\n"
+	printf "4. 80s Rewind\n"
+	printf "5. 90s Rewind\n"
+	printf "6. 2000s\n"
+	printf "7. Classical Radio\n"
+	printf "8. Classical Relaxation\n"
+	printf "9. Classic Rock\n"
+	printf "10. Gangsta\n"
+	printf "11. HipHop\n"
+	printf "12. MadHouse Country Radio\n"
+	printf "13. PopMusic\n"
+	printf "14. PopStars\n"
+	printf "15. RadioMetal\n"
+	printf "16. RocknRoll Radio\n"
+}
+
+start_radio() {
+	dunstify "Starting radio" "Playing station: $1."
+}
+
+end_radio() {
+	dunstify "Stopping radio" "You have quit radio."
+}
+
+choice=$(menu | dmenu -i -p "Choose radio station:" -l 25 | cut -d. -f1) || exit
+
+case $choice in 
+	"Quit")
+		end_radio ;
+		pkill -f http
+		exit 
+		;;
+	1)
+		pkill -f http || echo "mpv not running."
+		start_radio '50s Rewind' ;
+		mpv "https://zeno.fm/radio/50s-rewind/"
+		return
+		;;
+	2)
+		pkill -f http || echo "mpv not running."
+		start_radio '60s rewind' ;
+		mpv "https://zeno.fm/radio/60s-rewind/"
+		return
+		;;
+	3)
+		pkill -f http || echo "mpv not running"
+		start_radio '70s rewind' ;
+		mpv "https://zeno.fm/radio/70s-rewind/"
+		return
+		;;
+	4)
+		pkill -f http || echo "mpv not running"
+		start_radio '80s Rewind' ;
+		mpv "https://zeno.fm/radio/80s-rewind/"
+		return
+		;;
+	5)
+		pkill -f http || echo "mpv not running"
+		start_radio '90s Rewind' ;
+		mpv "https://zeno.fm/radio/90s-rewind/"
+		return
+		;;
+	6)
+		pkill -f http || echo "mpv not running"
+		start_radio 'The 2000s' ;
+		mpv "https://zeno.fm/radio/the-2000s/"
+		return
+		;;
+	7)
+		pkill -f http || echo "mpv not running"
+		start_radio 'Classical Radio' ;
+		mpv "https://zeno.fm/radio/classical-radio/"
+		return
+		;;
+	8)
+		pkill -f http || echo "mpv not running"
+		start_radio 'Classical Relaxation' ;
+		mpv "https://zeno.fm/radio/radio-christmas-non-stop-classical/"
+		return
+		;;
+	9)
+		pkill -f http || echo "mpv not running"
+		start_radio 'Classic Rock' ;
+		mpv "https://zeno.fm/radio/classic-rock/"
+		return
+		;;
+	10)
+		pkill -f http || echo "mpv not running"
+		start_radio 'Gangsta' ;
+		mpv "https://zeno.fm/radio/gangsta/"
+		return
+		;;
+	11)
+		pkill -f http || echo "mpv not running"
+		start_radio 'HipHop49' ;
+		mpv "https://zeno.fm/radio/hiphop49/"
+		return
+		;;
+	12)
+		pkill -f http || echo "mpv not running"
+		start_radio 'MadHouse Country Radio' ;
+		mpv "https://zeno.fm/radio/madhouse-country-radio/"
+		return
+		;;
+	13)
+		pkill -f http || echo "mpv not running"
+		start_radio 'PopMusic' ;
+		mpv "https://zeno.fm/radio/popmusic74vyurvmug0uv/"
+		return
+		;;
+	14)
+		pkill -f http || echo "mpv not running"
+		start_radio 'Popstars' ;
+		mpv "https://zeno.fm/radio/popstars/"
+		return
+		;;
+	15)
+		pkill -f http || echo "mpv not running"
+		start_radio 'RadioMetal' ;
+		mpv "https://zeno.fm/radio/radio-metal/"
+		return
+		;;
+	16)
+		pkill -f http || echo "mpv not running"
+		start_radio 'RocknRoll Radio' ;
+		mpv "https://zeno.fm/radio/rocknrool-radio994c7517qs8uv/"
+		return
+		;;
+	*)
+		echo "Program Terminated" && exit 0
+		;;
+esac
+

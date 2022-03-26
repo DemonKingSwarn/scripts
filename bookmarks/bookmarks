@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+SCRIPT_DIR=$(dirname "$(readlink -f -- "$0")")
+
+link=$(cat "$SCRIPT_DIR/bookmarks.txt" | rofi -dmenu)
+[ -z "$link" ] && exit
+firefox "$link" &
+#qutebrowser "$link" &

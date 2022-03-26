@@ -1,0 +1,12 @@
+#!/bin/sh
+mkdir -p "$HOME/dox/0x0"
+
+file=$(find $HOME -type f | dmenu -i -l 25)
+curl -F "file=@$file" 0x0.st | xclip -selection c
+notify-send "Your file uploaded to 0x0.st server :)"
+
+url=$(echo "$(xclip -sel c -o)")
+time=$(date '+%d-%m-%y-%H_%M_%S')
+title="[$time] 	$url 	${file}"
+echo "$title" >> "$HOME/dox/0x0/0x0-logs.txt"
+

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+mkdir -p $HOME/pix/save
+name=$(date '+%s')
+xclip -selection c -t image/png -o > "$HOME/pix/save/$name.png"
+notify-send "clipboard image saved at ~/pix/save/$name"

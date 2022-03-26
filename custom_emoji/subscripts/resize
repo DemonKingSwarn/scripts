@@ -1,0 +1,12 @@
+#!/bin/bash
+
+cd ~/cashew/emojis/
+
+for i in *;
+do
+	convert "$i" -resize 48x0^ "$i"
+done
+mogrify -strip *.png
+mogrify -strip *.gif
+
+
