@@ -5,7 +5,7 @@
 # except the coreutils, mpv are dependencies
 
 # setting the url cause i'm impatient and can't wait for 2 fucking seconds to get the working url. if urls changes run the recache url function. i'm too lazy
-base_url="https://gogoanime.fi/"
+base_url="$(curl -s -L -o /dev/null -w "%{url_effective}\n" https://gogoanime.fi)"
 
 # history file
 logfile="$HOME/.cache/ani-hsts"
