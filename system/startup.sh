@@ -4,6 +4,7 @@
 
 # cursor settings
 xsetroot -cursor_name left_ptr 
+xset r rate 300 50
 
 # keyboard settings
 ## Turns Caps Lock into Control, useful for Emacs

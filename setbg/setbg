@@ -1,5 +1,5 @@
 #!/bin/sh
 
-file="$HOME/pix/wall/47.jpg"
+file="$HOME/pix/wall/49.png"
  feh --bg-fill "$file"
  wal -i "$file"
