@@ -4,7 +4,7 @@
 
 # cursor settings
 xsetroot -cursor_name left_ptr 
-xset r rate 300 50
+#xset r rate 300 50
 
 # keyboard settings
 ## Turns Caps Lock into Control, useful for Emacs
@@ -18,7 +18,7 @@ xss-lock -l $HOME/.scripts/system/lock.sh &
 # rice
 picom --experimental-backends -f -b &
 dunst &
-$HOME/.scripts/setbg/setbg &
+$HOME/.scripts/setbg/set_wallpaper &
 $HOME/.config/polybar/launch.sh &
 bspswallow &
 

@@ -5,7 +5,7 @@ menu() {
 	printf "Yes\n"
 }
 
-choice=$(menu | dmenu -p "Shutdown?")
+choice=$(menu | dmenu -p "Are You Sure?")
 
 
 case $choice in
@@ -13,8 +13,7 @@ case $choice in
 		exit 1
 		;;
 	"Yes")
-		shutdown
-		exit 1
+		shutdown -h now
 		;;
 	*)
 		notify-send "nothing selected" && exit 1

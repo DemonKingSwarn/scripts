@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+path_to_ss="$HOME/pix/screenshots/screenshot_$(date +%s).png"
+scrot -F "$path_to_ss"
+xclip -sel c -t image/png "$path_to_ss"
+notify-send "🖼️ Scrot 🖼️" "Screenshot saved as $path_to_ss"

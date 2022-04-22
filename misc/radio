@@ -44,97 +44,110 @@ case $choice in
 	1)
 		pkill -f http || echo "mpv not running."
 		start_radio '50s Rewind' ;
-		mpv "https://zeno.fm/radio/50s-rewind/"
+		url=$(yt-dlp -g "https://zeno.fm/radio/50s-rewind/")
+		mpv "$url"
 		return
 		;;
 	2)
 		pkill -f http || echo "mpv not running."
 		start_radio '60s rewind' ;
-		mpv "https://zeno.fm/radio/60s-rewind/"
+		url=$(yt-dlp -g "https://zeno.fm/radio/60s-rewind/")
+		mpv "$url"
 		return
 		;;
 	3)
 		pkill -f http || echo "mpv not running"
 		start_radio '70s rewind' ;
-		mpv "https://zeno.fm/radio/70s-rewind/"
+		url=$(yt-dlp -g "https://zeno.fm/radio/70s-rewind/")
+		mpv "$url"
 		return
 		;;
 	4)
 		pkill -f http || echo "mpv not running"
 		start_radio '80s Rewind' ;
-		mpv "https://zeno.fm/radio/80s-rewind/"
+		url=$(yt-dlp -g "https://zeno.fm/radio/80s-rewind/")
+		mpv "$url"
 		return
 		;;
 	5)
 		pkill -f http || echo "mpv not running"
 		start_radio '90s Rewind' ;
-		mpv "https://zeno.fm/radio/90s-rewind/"
+		url=$(yt-dlp -g "https://zeno.fm/radio/90s-rewind/")
+		mpv "$url"
 		return
 		;;
 	6)
 		pkill -f http || echo "mpv not running"
 		start_radio 'The 2000s' ;
-		mpv "https://zeno.fm/radio/the-2000s/"
+		url=$(yt-dlp -g "https://zeno.fm/radio/the-2000s/")
+		mpv "$url"
 		return
 		;;
 	7)
 		pkill -f http || echo "mpv not running"
 		start_radio 'Classical Radio' ;
-		mpv "https://zeno.fm/radio/classical-radio/"
+		url=$(yt-dlp -g "https://zeno.fm/radio/classical-radio/")
+		mpv "$url"
 		return
 		;;
 	8)
 		pkill -f http || echo "mpv not running"
 		start_radio 'Classical Relaxation' ;
-		mpv "https://zeno.fm/radio/radio-christmas-non-stop-classical/"
+		url=$(yt-dlp -g "https://zeno.fm/radio/radio-christmas-non-stop-classical/")
+		mpv "$url"
 		return
 		;;
 	9)
 		pkill -f http || echo "mpv not running"
 		start_radio 'Classic Rock' ;
-		mpv "https://zeno.fm/radio/classic-rock/"
+		url=$(yt-dlp -g "https://zeno.fm/radio/classic-rock/")
+		mpv "$url"
 		return
 		;;
 	10)
 		pkill -f http || echo "mpv not running"
 		start_radio 'Gangsta' ;
-		mpv "https://zeno.fm/radio/gangsta/"
+		url=$(yt-dlp -g "https://zeno.fm/radio/gangsta/")
+		mpv "$url"
 		return
 		;;
 	11)
 		pkill -f http || echo "mpv not running"
 		start_radio 'HipHop49' ;
-		mpv "https://zeno.fm/radio/hiphop49/"
+		url=$(yt-dlp -g "https://zeno.fm/radio/hiphop49/")
+		mpv "$url"
 		return
 		;;
 	12)
 		pkill -f http || echo "mpv not running"
 		start_radio 'MadHouse Country Radio' ;
-		mpv "https://zeno.fm/radio/madhouse-country-radio/"
+		url=$(yt-dlp -g "https://zeno.fm/radio/madhouse-country-radio/")
+		mpv "$url"
 		return
 		;;
 	13)
 		pkill -f http || echo "mpv not running"
 		start_radio 'PopMusic' ;
-		mpv "https://zeno.fm/radio/popmusic74vyurvmug0uv/"
+		url=$(yt-dlp -g "https://zeno.fm/radio/popmusic74vyurvmug0uv/")
+		mpv "$url"
 		return
 		;;
 	14)
 		pkill -f http || echo "mpv not running"
 		start_radio 'Popstars' ;
-		mpv "https://zeno.fm/radio/popstars/"
+		mpv $(yt-dlp -g "https://zeno.fm/radio/popstars/")
 		return
 		;;
 	15)
 		pkill -f http || echo "mpv not running"
 		start_radio 'RadioMetal' ;
-		mpv "https://zeno.fm/radio/radio-metal/"
+		mpv $(yt-dlp -g "https://zeno.fm/radio/radio-metal/")
 		return
 		;;
 	16)
 		pkill -f http || echo "mpv not running"
 		start_radio 'RocknRoll Radio' ;
-		mpv "https://zeno.fm/radio/rocknrool-radio994c7517qs8uv/"
+		mpv $(yt-dlp -g "https://zeno.fm/radio/rocknrool-radio994c7517qs8uv/")
 		return
 		;;
 	*)
