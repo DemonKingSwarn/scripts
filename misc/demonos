@@ -53,8 +53,8 @@ def deploy_dotfiles():
 def install_paru():
     print(f"installing paru!")
     os.system(f"git clone https://aur.archlinux.org/paru-bin.git")
-    os.system(f"cd paru-bin")
-    os.system(f"makepkg -si")
+    os.system(f"cd paru-bin && makepkg -si")
+    #os.system(f"makepkg -si")
     print(f"installed paru!")
 
 def install_programs():
