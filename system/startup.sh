@@ -22,6 +22,9 @@ $HOME/.scripts/setbg/set_wallpaper &
 $HOME/.config/polybar/launch.sh &
 bspswallow &
 
+# Updates dotfiles
+$HOME/.scripts/misc/autocommitpressure &
+
 while true;
 do
 	sleep 1
