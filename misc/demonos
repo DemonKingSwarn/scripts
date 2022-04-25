@@ -1,0 +1,87 @@
+#!/usr/bin/env python3
+
+"""
+     _                                      
+  __| | ___ _ __ ___   ___  _ __   ___  ___ 
+ / _` |/ _ \ '_ ` _ \ / _ \| '_ \ / _ \/ __|
+| (_| |  __/ | | | | | (_) | | | | (_) \__ \
+ \__,_|\___|_| |_| |_|\___/|_| |_|\___/|___/
+                                            
+
+"""
+
+import os
+from os.path import exists
+from os.path import expanduser
+from pathlib import Path
+
+home = expanduser("~")
+user = os.getlogin()
+url = "https://github.com/demonkingswarn/dotfiles-3"
+
+def shell_exists(shell):
+    if Path(f"/bin/{shell}").is_file():
+        return f"{shell} exists"
+    else:
+        return f"{shell} not found"
+
+print(shell_exists('bash'))
+print(shell_exists('fish'))
+print(shell_exists('zsh'))
+
+def change_shell():
+    print(f"changing {user}'s defualt shell")
+    whsh=input("enter the shell: ")
+    os.system(f"chsh -s $(which {whsh})")
+    print(f"changed {user}'s default shell to {whsh}")
+
+def deploy_dotfiles():
+    print(f"Deploying demonkingswarn's dotfiles!")
+    os.system(f"mkdir -p ~/dl/gitthings")
+    os.system(f"cd ~/dl/gitthings")
+    os.system(f"git clone {url}")
+    os.system(f"cd dotfiles-3")
+    os.system(f"mv -r .config/* ~/.config")
+    os.system(f"mkdir -p ~/.local/bin")
+    os.system(f"mv -r .local/bin/* ~/.local/bin")
+    os.system(f"mkdir -p ~/.local/share")
+    os.system(f"mv -r .local/share/fonts ~/.local/share")
+    os.system(f"cd && rm .zshrc")
+    os.system(f"ln -s ~/.config/zsh/.zshrc ~/.zshrc")
+    os.system(f"cd ~/dl/gitthings/ && git clone https://github.com/zsh-users/zsh-syntax-highlighting")
+    os.system(f"cd && ln -s ~/.config/X11/xprofile ~/.xprofile")
+    os.system(f"ln -s ~/.config/shell/profile ~/.zprofile")
+    print(f"Finished deploying demonkingswarn's dotfiles!")
+
+def install_paru():
+    print(f"installing paru!")
+    os.system(f"git clone https://aur.archlinux.org/paru-bin.git")
+    os.system(f"cd paru-bin")
+    os.system(f"makepkg -si")
+    print(f"installed paru!")
+
+def install_programs():
+    print(f"Installing Demon's Programs!")
+    os.system(f"paru -S bspwm alacritty feh flameshot scrot htop i3lock kitty mpv neovim picom lf ranger sxhkd zathura rofi rofi-file-browser-extended nsxiv neofetch ytmenu-git")
+
+def main_menu():
+    print("~"*60)
+    print("1. Change Shell")
+    print("2. Deploy Demon's Dotfiles")
+    print("3. Install Paru AUR Helper")
+    print("4. Install Demon's Programs")
+    print("~"*60)
+
+while True:
+    main_menu()
+    select=input("Enter Your Choice: ")
+    if select == "1":
+        change_shell()
+    elif select == "2":
+        deploy_dotfiles()
+    elif select == "3":
+        install_paru()
+    elif select == "4":
+        install_programs()
+    else:
+        break

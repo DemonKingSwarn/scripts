@@ -1,5 +1,6 @@
 #!/bin/sh
+
 walp=$(ls -d ~/pix/wall/* | shuf -n 1)
 feh --bg-fill "$walp"
 wal -i "$walp"
-pywalfox install
+# pywalfox install
