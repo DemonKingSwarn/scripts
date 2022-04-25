@@ -48,6 +48,7 @@ def deploy_dotfiles():
     os.system(f"cd ~/dl/gitthings/ && git clone https://github.com/zsh-users/zsh-syntax-highlighting")
     os.system(f"cd && ln -s ~/.config/X11/xprofile ~/.xprofile")
     os.system(f"ln -s ~/.config/shell/profile ~/.zprofile")
+    os.system(f"mkdir -p ~/pix && cd ~/pix && git clone https://github.com/demonkingswarn/wallpapers wall")
     print(f"Finished deploying demonkingswarn's dotfiles!")
 
 def install_paru():
