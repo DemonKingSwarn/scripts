@@ -62,7 +62,8 @@ def install_paru():
 
 def install_programs():
     print(f"Installing Demon's Programs!")
-    os.system(f"paru -S bspwm alacritty feh flameshot scrot htop i3lock kitty mpv neovim picom lf ranger sxhkd zathura rofi rofi-file-browser-extended nsxiv neofetch ytmenu-git")
+    os.system(f"paru -S bspwm alacritty feh flameshot scrot htop i3lock kitty mpv neovim picom lf ranger sxhkd zathura rofi rofi-file-browser-extended nsxiv neofetch ytmenu-git emacs")
+    print(f"Installed Demon's Programs!")
 
 def main_menu():
     print("~"*60)
