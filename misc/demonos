@@ -25,13 +25,10 @@ def shell_exists(shell):
     else:
         return f"{shell} not found"
 
-print(shell_exists('bash'))
-print(shell_exists('fish'))
-print(shell_exists('zsh'))
-
 def change_shell():
-    print(f"changing {user}'s defualt shell")
+    print(f"changing {user}'s defualt shell") 
     whsh=input("enter the shell: ")
+    print(shell_exists(whsh))
     os.system(f"chsh -s $(which {whsh})")
     print(f"changed {user}'s default shell to {whsh}")
 
@@ -67,7 +64,7 @@ def install_programs():
 
 def deploy_emacs():
     print(f"Deploying D-EMACS!")
-    os.system(f"cd $HOME")
+    os.system(f"cd ~")
     os.system(f"git clone https://github.com/demonkingswarn/.emacs.d .emacs.d")
     print(f"Done!")
 
