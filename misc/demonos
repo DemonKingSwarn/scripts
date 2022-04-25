@@ -64,9 +64,8 @@ def install_programs():
 
 def deploy_emacs():
     print(f"Deploying D-EMACS!")
-    os.system(f"cd ~")
-    os.system(f"git clone https://github.com/demonkingswarn/.emacs.d .emacs.d")
-    print(f"Done!")
+    os.system(f"git clone https://github.com/demonkingswarn/.emacs.d ~/.emacs.d")
+    print(f"Deployed D-EMACS!")
 
 def main_menu():
     print("~"*60)
@@ -75,6 +74,7 @@ def main_menu():
     print("3. Install Paru AUR Helper")
     print("4. Install Demon's Programs")
     print("5. Deploy D-EMACS Configs")
+    print("6. Exit")
     print("~"*60)
 
 while True:
@@ -90,5 +90,7 @@ while True:
         install_programs()
     elif select == "5":
         deploy_emacs()
+    elif select == "6":
+        break
     else:
         break
