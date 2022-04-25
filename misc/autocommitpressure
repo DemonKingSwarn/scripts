@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+cd "$HOME"
+~/.scripts/autocommit/autocommit.py
+exit 1
