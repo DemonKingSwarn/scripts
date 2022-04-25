@@ -65,12 +65,19 @@ def install_programs():
     os.system(f"paru -S bspwm alacritty feh flameshot scrot htop i3lock kitty mpv neovim picom lf ranger sxhkd zathura rofi rofi-file-browser-extended nsxiv neofetch ytmenu-git emacs")
     print(f"Installed Demon's Programs!")
 
+def deploy_emacs():
+    print(f"Deploying D-EMACS!")
+    os.system(f"cd $HOME")
+    os.system(f"git clone https://github.com/demonkingswarn/.emacs.d .emacs.d")
+    print(f"Done!")
+
 def main_menu():
     print("~"*60)
     print("1. Change Shell")
     print("2. Deploy Demon's Dotfiles")
     print("3. Install Paru AUR Helper")
     print("4. Install Demon's Programs")
+    print("5. Deploy D-EMACS Configs")
     print("~"*60)
 
 while True:
@@ -84,5 +91,7 @@ while True:
         install_paru()
     elif select == "4":
         install_programs()
+    elif select == "5":
+        deploy_emacs()
     else:
         break
