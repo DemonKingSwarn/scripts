@@ -23,7 +23,10 @@ $HOME/.config/polybar/launch.sh &
 bspswallow &
 
 # Updates dotfiles
-$HOME/.scripts/misc/autocommitpressure &
+# $HOME/.scripts/misc/autocommitpressure &
+
+# D-EMACS
+emacs --daemon &
 
 while true;
 do
