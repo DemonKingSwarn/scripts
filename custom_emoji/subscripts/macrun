@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cd ~/Files/emojis
+chosen=$(ls | fzf --preview 'catimg {}')
+[ -z "$chosen" ] && exit
+printf "https://gitlab.com/thecashewtrader/emojis/-/raw/main/$chosen" | pbcopy

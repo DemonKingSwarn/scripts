@@ -1,0 +1,17 @@
+#!/bin/sh
+
+menu() {
+	printf "bspwm - $HOME/.config/bspwm/bspwmrc\n"
+	printf "kitty - $HOME/.config/kitty/kitty.conf\n"
+	printf "rofi - $HOME/.config/rofi/config.rasi\n"
+	printf "radio - $HOME/.scripts/misc/radio\n"
+}
+
+choice=$(menu | awk '{print $1}' | dmenu -l 10 -i -p "What To Edit")
+
+case $choice in
+	bspwm) nvim $HOME/.config/bspwm/bspwmrc ;;
+	kitty) nvim $HOME/.config/kitty/kitty.conf ;;
+	rofi) nvim $HOME/.config/rofi/config.rasi ;;
+	radio) nvim $HOME/.scripts/misc/radio ;;
+esac

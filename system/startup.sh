@@ -16,7 +16,7 @@ flameshot &
 xss-lock -l $HOME/.scripts/system/lock.sh &
 
 # rice
-picom --experimental-backends -f -b &
+picom --experimental-backends -b &
 dunst &
 $HOME/.scripts/setbg/set_wallpaper &
 $HOME/.config/polybar/launch.sh &

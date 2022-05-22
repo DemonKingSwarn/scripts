@@ -1,0 +1,4 @@
+#!/bin/sh
+
+kern="$(uname -r)"
+printf "$kern\n"

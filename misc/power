@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+
+menu() {
+	printf "lock\n"
+	printf "suspend\n"
+	printf "hibernate\n"
+	printf "logout\n"
+	printf "reboot\n"
+	printf "poweroff\n"
+}
+
+choice=$(menu | dmenu -sb "#ee0044" -l 10 -p "⏻ ")
+
+case "$choice" in
+	lock) $HOME/.scripts/system/lock.sh ;;
+	suspend) systemctl suspend ;;
+	hibernate) systemctl hibernate ;;
+	logout) bspc quit ;;
+	reboot) systemctl reboot ;;
+	poweroff) systemctl poweroff ;;
+esac

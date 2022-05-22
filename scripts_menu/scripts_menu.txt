@@ -13,4 +13,6 @@
 ../misc/imagesaver
 ../misc/invidious_copy
 ../misc/waldl
-../system/shutdownscript
+../misc/wallmenu
+../misc/power
+../misc/config
