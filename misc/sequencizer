@@ -1,7 +1,12 @@
 #!/bin/sh
-a=1
-for i in ~/pix/wall/*.jpg ; do
-	new=$(printf "%03d.jpg" "$a")
-	mv -i -- "$i" "$new"
-	let a=a+1
+#a=1
+#for i in ~/pix/wall/*.jpg ; do
+#	new=$(printf "%03d.jpg" "$a")
+#	mv -i -- "$i" "$new"
+#	let a=a+1
+#done
+
+for i in ~/pix/wall/*.jpg ; 
+do 
+	mv "$i" "$(printf "%s" "$i" | sed 's/^[a-zA-Z]* - /^[0-9]/g')" ; 
 done

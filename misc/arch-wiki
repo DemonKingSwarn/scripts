@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+wikidir="/usr/share/doc/arch-wiki/html/en/"
+
+wikidocs="$(find "$wikidir" -iname "*.html")"
+
+main() {
+	choice=$(printf "%s\n" "${wikidocs[@]}" | cut -d '/' -f8- | sed -e 's/_/ /g' -e 's/.html//g' | sort | dmenu -i -l 10 -p "Search ArchWiki: ")
+
+	if [ "$choice" ] ; then
+		article=$(printf "%s" "$wikidir$choice.html" | sed -e 's/ /_/g')
+		xdg-open "$article"
+	else
+		printf "%s\n" "Program Terminated." && exit 0
+	fi
+}
+
+main

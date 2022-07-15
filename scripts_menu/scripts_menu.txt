@@ -16,3 +16,5 @@
 ../misc/wallmenu
 ../misc/power
 ../misc/config
+../misc/arch-wiki
+../system/killProgram

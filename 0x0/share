@@ -1,7 +1,7 @@
 #!/bin/sh
 mkdir -p "$HOME/dox/0x0"
 
-file=$(find $HOME -type f | dmenu -i -l 25)
+file=$(find $HOME/pix -type f | dmenu -i -l 25)
 curl -F "file=@$file" 0x0.st | xclip -selection c
 notify-send "Your file uploaded to 0x0.st server :)"
 

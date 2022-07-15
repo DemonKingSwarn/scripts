@@ -10,8 +10,8 @@ menu() {
 choice=$(menu | awk '{print $1}' | dmenu -l 10 -i -p "What To Edit")
 
 case $choice in
-	bspwm) nvim $HOME/.config/bspwm/bspwmrc ;;
-	kitty) nvim $HOME/.config/kitty/kitty.conf ;;
-	rofi) nvim $HOME/.config/rofi/config.rasi ;;
-	radio) nvim $HOME/.scripts/misc/radio ;;
+	bspwm) $TERMINAL -e nvim $HOME/.config/bspwm/bspwmrc ;;
+	kitty) $TERMINAL -e nvim $HOME/.config/kitty/kitty.conf ;;
+	rofi) $TERMINAL -e nvim $HOME/.config/rofi/config.rasi ;;
+	radio) $TERMINAL -e nvim $HOME/.scripts/misc/radio ;;
 esac
