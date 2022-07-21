@@ -9,7 +9,7 @@ main() {
 
 	if [ "$choice" ] ; then
 		article=$(printf "%s" "$wikidir$choice.html" | sed -e 's/ /_/g')
-		xdg-open "$article"
+		qutebrowser "$article"
 	else
 		printf "%s\n" "Program Terminated." && exit 0
 	fi

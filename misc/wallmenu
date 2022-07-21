@@ -4,23 +4,21 @@ nsxiv_opts="-tfpo"
 walldir="$HOME/pix/wall"
 
 menu() {
-	printf "set a wallpaper\n"
-	printf "set a random wallpaper\n"
-	printf "exit\n"
+	printf "%s\n" "set a wallpaper"
+	printf "%s\n" "set a random wallpaper"
+	printf "%s\n" "exit"
 }
 
 set_wal() {
 	wal=$(nsxiv "$nsxiv_opts" "$walldir")
 	feh --bg-fill "$wal"
 	wal -i "$wal"
-	pywalfox install
 }
 
 set_random() {
 	wal=$(ls -d ~/pix/wall/* | shuf -n 1)
 	feh --bg-fill "$wal"
 	wal -i "$wal"
-	pywalfox install
 }
 
 choice=$(menu | dmenu -i -p "What You Want To Do?" -l 3 | awk '{print $3}')

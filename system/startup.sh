@@ -14,6 +14,7 @@ sxhkd &
 # system
 flameshot &
 xss-lock -l $HOME/.scripts/system/lock.sh &
+xrdb $HOME/.Xresources &
 
 # rice
 picom --experimental-backends -b &
