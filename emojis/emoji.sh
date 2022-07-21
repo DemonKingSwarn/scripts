@@ -10,5 +10,5 @@ chosen=$(cut -d ';' -f1 "$DIRNAME/emoji.txt" | rofi -dmenu -i -p "Emoji" | sed "
 [ -z "$chosen" ] && exit
 
 printf "$chosen" | xclip -sel c
-notify-send "\"$chosen\" copied to clipboard"
+notify-send "$chosen  copied to clipboard"
 
