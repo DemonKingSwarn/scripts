@@ -14,12 +14,12 @@ sxhkd &
 # system
 flameshot &
 xss-lock -l $HOME/.scripts/system/lock.sh &
-xrdb $HOME/.Xresources &
 
 # rice
 picom --experimental-backends -b &
 dunst &
 $HOME/.scripts/setbg/set_wallpaper &
+xrdb $HOME/.Xresources &
 $HOME/.config/polybar/launch.sh &
 bspswallow &
 

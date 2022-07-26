@@ -1,0 +1,11 @@
+#!/bin/bash
+
+tp=36953
+tog=1
+while true;
+do
+    price=$(curl -s rate.sx/1BTC | awk -F '.' '{print $1}')
+    (( "$tog" == 1 )) && (( "$price" < "$tp" )) && tog=0 && notify-send "BTC value is down!!!"
+    (( "$tog" == 0 )) && (( "$price" > "$tp" )) && tog=1 && notify-send "BTC value is above the threshold!!!"
+    sleep 30
+done
