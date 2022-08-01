@@ -19,7 +19,6 @@ xss-lock -l $HOME/.scripts/system/lock.sh &
 picom --experimental-backends -b &
 dunst &
 $HOME/.scripts/setbg/set_wallpaper &
-xrdb $HOME/.Xresources &
 $HOME/.config/polybar/launch.sh &
 bspswallow &
 

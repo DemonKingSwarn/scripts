@@ -12,13 +12,13 @@ menu() {
 set_wal() {
 	wal=$(nsxiv "$nsxiv_opts" "$walldir")
 	feh --bg-fill "$wal"
-	wal -i "$wal"
+	#wal -i "$wal"
 }
 
 set_random() {
 	wal=$(ls -d ~/pix/wall/* | shuf -n 1)
 	feh --bg-fill "$wal"
-	wal -i "$wal"
+	#wal -i "$wal"
 }
 
 choice=$(menu | dmenu -i -p "What You Want To Do?" -l 3 | awk '{print $3}')
