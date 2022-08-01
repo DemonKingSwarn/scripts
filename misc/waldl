@@ -16,7 +16,7 @@ version="0.0.1"
 ####################
 
 # the dir where wallpapers are stored
-walldir="$HOME/pix/wall"
+walldir="$HOME/pix/nordwall"
 # the dir used to cache thumbnails
 cachedir="$HOME/.cache/wallhaven"
 # sxiv options

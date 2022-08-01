@@ -18,7 +18,7 @@ xss-lock -l $HOME/.scripts/system/lock.sh &
 # rice
 picom --experimental-backends -b &
 dunst &
-$HOME/.scripts/setbg/set_wallpaper &
+$HOME/.scripts/setbg/setbg &
 $HOME/.config/polybar/launch.sh &
 bspswallow &
 
