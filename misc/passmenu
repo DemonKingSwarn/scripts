@@ -19,7 +19,7 @@ else
 	exit 1
 fi
 
-prefix=${PASSWORD_STORE_DIR-~/.password-store}
+prefix="$XDG_DATA_HOME"/pass
 password_files=( "$prefix"/**/*.gpg )
 password_files=( "${password_files[@]#"$prefix"/}" )
 password_files=( "${password_files[@]%.gpg}" )
