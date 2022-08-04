@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # This script takes a list of paths to git repos
 # and adds, commits and pushes them to their
