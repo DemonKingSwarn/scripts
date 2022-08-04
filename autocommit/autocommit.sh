@@ -22,8 +22,8 @@ do
 	printf "%$(tput cols)s\n" |tr " " "-"
 
 	tput setaf 7
-	z "$HOME"
-	z "$i"
+	bash -c "cd $HOME"
+	bash -c "cd $i"
 	git add .
 	git commit -m "$cmsg"
 	git push
