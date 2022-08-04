@@ -29,7 +29,7 @@ do
 	echo "Processed \`$p\`"
 	printf "%$(tput cols)s\n" |tr " " "-"
 
-done < ./autocommit.txt
+done < $HOME/.scripts/autocommit/autocommit.txt
 
 tput setaf 4
 printf '%32s\n' |tr " " "="
