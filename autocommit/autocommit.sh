@@ -22,7 +22,7 @@ do
 	printf "%$(tput cols)s\n" |tr " " "-"
 
 	tput setaf 7
-	z "$p"
+	cd "$p"
 	git add .
 	git commit -m "$cmsg"
 	git push
