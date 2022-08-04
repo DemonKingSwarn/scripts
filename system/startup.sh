@@ -8,7 +8,7 @@ xsetroot -cursor_name left_ptr
 
 # keyboard settings
 ## Turns Caps Lock into Control, useful for Emacs
-setxkbmap -option ctrl:nocaps
+#setxkbmap -option ctrl:nocaps
 sxhkd &
 
 # system

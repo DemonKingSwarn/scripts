@@ -1,0 +1,20 @@
+#!/bin/sh
+
+old="#6272a4"
+old_accent="#ff79c6"
+oldimg="/home/demonkingswarn/pix/wall/55.jpg"
+img=$(nsxiv -t ~/pix/wall/ -o)
+
+printf "Extracting Accent color..\n"
+[ -z "$*" ] && accent=$(convert $img +dither -colors 5 -unique-colors txt: | tail -1 | sed -nE 's/.* #([^ ]*).*/#\1/p') || accent="$*"
+
+printf "Setting wallpaper..\n"
+xwallpaper --stretch $img
+printf "Tweaking system..\n"
+bspc config focused_border_color "$accent"
+printf "making changes permanent..\n"
+sed -i "s/$old/$accent/g" $HOME/.config/dunst/dunstrc
+sed -i "s/$old_accent/$accent/g" $HOME/.config/bspwm/bspwmrc
+printf "Restarting services..\n"
+killall dunst
+printf "Done!!"
