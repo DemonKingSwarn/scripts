@@ -1,2 +1,2 @@
-~/dox/code/ytplayer/
-~/.emacs.d/
+$HOME/.scripts/
+$HOME/.dots/
