@@ -11,29 +11,29 @@ SCRIPT_DIR=$(dirname "$(readlink -f -- "$0")")
 cmsg="$1"
 [ -z "$1" ] && cmsg="autocommit"
 
-for i in $(cat "$SCRIPT_DIR/autocommit.txt")
+while read p
 do
 	tput setaf 4
 	printf "%$(tput cols)s\n" |tr " " "="
 
 	tput setaf 6
 	printf "%$(tput cols)s\n" |tr " " "-"
-	echo "Processing \`$i\`"
+	echo "Processing \`$p\`"
 	printf "%$(tput cols)s\n" |tr " " "-"
 
 	tput setaf 7
-	bash -c "cd $HOME"
-	bash -c "cd $i"
+    bash -c "cd $HOME"
+	bash -c "cd $p"
 	git add .
 	git commit -m "$cmsg"
 	git push
 
 	tput setaf 2
 	printf "%$(tput cols)s\n" |tr " " "-"
-	echo "Processed \`$i\`"
+	echo "Processed \`$p\`"
 	printf "%$(tput cols)s\n" |tr " " "-"
 
-done
+done < ./autocommit.txt
 
 tput setaf 4
 printf '%32s\n' |tr " " "="
