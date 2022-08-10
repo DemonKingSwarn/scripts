@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+
+import subprocess
+import sys
+#import re
+
+"""
+sys.ps1 = "\033[1;33m>>>\033[0m "
+sys.ps2 = "\033[1;34m...\033[0m "
+"""
+
+query = " ".join(sys.argv[1:])
+
+if query == 'ls':
+    query = query.replace("ls", "exa --icons")
+
+exe = subprocess.call(f"{query}", shell=True)
