@@ -1,7 +1,7 @@
 #!/bin/sh
 
 nsxiv_opts="-tfpo"
-walldir="$HOME/pix/wall"
+walldir="$HOME/hdd/pix/wall"
 
 menu() {
 	printf "%s\n" "set a wallpaper"
@@ -11,17 +11,17 @@ menu() {
 
 set_wal() {
 	wal=$(nsxiv "$nsxiv_opts" "$walldir")
-	feh --bg-fill "$wal"
+	feh --bg-scale "$wal"
 	#wal -i "$wal"
 }
 
 set_random() {
 	wal=$(ls -d ~/pix/wall/* | shuf -n 1)
-	feh --bg-fill "$wal"
+	feh --bg-scale "$wal"
 	#wal -i "$wal"
 }
 
-choice=$(menu | dmenu -i -p "What You Want To Do?" -l 3 | awk '{print $3}')
+choice=$(menu | dmenu -p "What You Want To Do?" -l 3 | awk '{print $3}')
 
 case $choice in
 	wallpaper)

@@ -4,6 +4,7 @@
 
 # cursor settings
 xsetroot -cursor_name left_ptr 
+xinput set-prop "Logitech G102 LIGHTSYNC Gaming Mouse" "Coordinate Transformation Matrix" 0.7 0 0 0 0.7 0 0 0 1
 #xset r rate 300 50
 
 # keyboard settings
@@ -14,19 +15,23 @@ sxhkd &
 # system
 flameshot &
 xss-lock -l $HOME/.scripts/system/lock.sh &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # rice
+xrdb -merge ~/.Xresources &
 picom --experimental-backends -b &
 dunst &
 $HOME/.scripts/setbg/setbg &
 $HOME/.config/polybar/launch.sh &
 bspswallow &
 
-# Updates dotfiles
+#Updates dotfiles
 # $HOME/.scripts/misc/autocommitpressure &
 
 # D-EMACS
-emacs --daemon &
+#emacs --daemon &
+
+xrandr --auto
 
 while true;
 do
