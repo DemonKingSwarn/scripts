@@ -19,6 +19,7 @@ xss-lock -l $HOME/.scripts/system/lock.sh &
 
 # rice
 xrdb -merge ~/.Xresources &
+#picom --animations --animation-window-mass 0.5 --animation-for-open-window zoom --animation-stiffness 350 --experimental-backends -b &
 picom --experimental-backends -b &
 dunst &
 $HOME/.scripts/setbg/setbg &
