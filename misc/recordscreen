@@ -1,8 +1,8 @@
 #!/bin/sh
-mkdir -p "$HOME/vids/recordings"
-path="$HOME/vids/recordings"
-name=$(printf '%s' "$*" | dmenu -i -p "Enter file name:" | tr ' ' '-')
-ffmpeg -f x11grab -r 25 -i :0.0 -f pulse -i alsa_output.pci-0000_00_1b.0.analog-stereo.monitor "$path/$name.mkv"
+mkdir -p "$HOME/hdd/vids/recordings"
+path="$HOME/hdd/vids/recordings"
+[ -z "$1" ] && printf "Enter filename: " && read -r name || name=$(printf '%s' "$*")
+ffmpeg -i hw:$1 -f kmsgrab -framerate $fps -i - "$path/$name.mkv"
 ffmpeg -i "$path/$name.mkv" -c copy "$path/$name.mp4" 
 rm -rf "$path/$name.mkv"
 notify-send "ffmpeg" "video completed"
