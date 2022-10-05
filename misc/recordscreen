@@ -1,14 +1,27 @@
 #!/bin/sh
-mkdir -p "$HOME/hdd/vids/recordings"
-path="$HOME/hdd/vids/recordings"
+
+path="$HOME/vids/recordings"
+
+config_dir="${XDG_CONFIG_HOME:-$HOME/.config}"
+[ -e "$config_dir/demonrecord/config" ] && . "$config_dir/demonrecord/config"
+
+mkdir -p "$path"
+
 [ -z "$1" ] && printf "Enter filename: " && read name || name=$(printf '%s' "$*")
-printf "[a] record with audio\n[n] record without audio\n"
+
+printf "[a] record with desktop audio\n[m] record with mic\n[n] record without audio\n[q] quit\n"
+
 printf ": " && read ch
+
 case $ch in
     a)
-        wf-recorder --audio --file="$path/$name.mp4";;
+        wf-recorder --audio=alsa_output.pci-0000_00_1f.3.analog-stereo.monitor --force-yuv --file="$path/$name.mp4";;
+    m)
+        wf-recorder --audio=alsa_input.usb-RHF-211012_SPCA2650_AV_Camera_01.00.00-02.iec958-stereo --force-yuv --file="$path/$name.mp4";;
     n)
-        wf-recorder -f "$path/$name.mp4";;
+        wf-recorder --force-yuv -f "$path/$name.mp4";;
+    q)
+        exit 0;;
     *)
         printf "%s\n" "error detected";;
 esac
