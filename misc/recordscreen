@@ -1,8 +1,14 @@
 #!/bin/sh
 mkdir -p "$HOME/hdd/vids/recordings"
 path="$HOME/hdd/vids/recordings"
-[ -z "$1" ] && printf "Enter filename: " && read -r name || name=$(printf '%s' "$*")
-ffmpeg -i hw:$1 -f kmsgrab -framerate $fps -i - "$path/$name.mkv"
-ffmpeg -i "$path/$name.mkv" -c copy "$path/$name.mp4" 
-rm -rf "$path/$name.mkv"
-notify-send "ffmpeg" "video completed"
+[ -z "$1" ] && printf "Enter filename: " && read name || name=$(printf '%s' "$*")
+printf "[a] record with audio\n[n] record without audio\n"
+printf ": " && read ch
+case $ch in
+    a)
+        wf-recorder --audio --file="$path/$name.mp4";;
+    n)
+        wf-recorder -f "$path/$name.mp4";;
+    *)
+        printf "%s\n" "error detected";;
+esac
