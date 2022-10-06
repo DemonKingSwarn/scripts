@@ -33,7 +33,7 @@ end_radio() {
 	dunstify "Stopping radio" "You have quit radio."
 }
 
-choice=$(menu | dmenu -i -p "Choose radio station:" -l 25 | cut -d. -f1) || exit
+choice=$(menu | dmenu -p "Choose radio station:" -l 25 | cut -d. -f1) || exit
 
 case $choice in 
 	"Quit")

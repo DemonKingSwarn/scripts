@@ -5,7 +5,7 @@
 # cursor settings
 xsetroot -cursor_name left_ptr 
 #xinput set-prop "Logitech G102 LIGHTSYNC Gaming Mouse" "Coordinate Transformation Matrix" 0.7 0 0 0 0.7 0 0 0 1
-#xset r rate 300 50
+xset r rate 300 50
 
 # keyboard settings
 ## Turns Caps Lock into Control, useful for Emacs

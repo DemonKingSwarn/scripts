@@ -1,9 +1,9 @@
 #!/bin/sh
 
-old="#A85E90"
+old=""
 #old_accent="#ff79c6"
 oldimg="/home/demonkingswarn/pix/wall/55.jpg"
-img=$(nsxiv -t ~/pix/wall/ -o)
+img=$(nsxiv -t ~/hdd/pix/wall/ -o)
 
 printf "Extracting Accent color..\n"
 [ -z "$*" ] && accent=$(convert $img +dither -colors 5 -unique-colors txt: | tail -1 | sed -nE 's/.* #([^ ]*).*/#\1/p') || accent="$*"
@@ -16,6 +16,7 @@ printf "making changes permanent..\n"
 sed -i "s/$old/$accent/g" $HOME/.config/dunst/dunstrc
 sed -i "s/$old/$accent/g" $HOME/.config/bspwm/bspwmrc
 sed -i "s/$old/$accent/g" $HOME/.scripts/misc/themer
+sed -i "s/$oldimg/$img/g" $HOME/.scripts/misc/themer
 printf "Restarting services..\n"
 killall dunst
 printf "Done!!"
