@@ -30,9 +30,7 @@ bspswallow &
 # $HOME/.scripts/misc/autocommitpressure &
 
 # D-EMACS
-#emacs --daemon &
-
-xrandr --auto
+emacs --daemon &
 
 while true;
 do
