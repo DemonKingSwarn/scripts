@@ -16,6 +16,8 @@ sxhkd &
 flameshot &
 xss-lock -l $HOME/.scripts/system/lock.sh &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+/usr/lib/geoclue-2.0/demos/agent &
+redshift &
 
 # rice
 xrdb -merge ~/.Xresources &
