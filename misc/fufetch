@@ -9,7 +9,7 @@ c_reset="\033[0m"
 space="          "
 get_pkg_count () {
 	# change this to your distro's package count
-	printf "${space}pkgs    $(paru -Qn | wc -l)\n"
+	printf "${space}pkgs    $(paru -Qq | wc -l)\n"
 }
 
 get_mem () {
