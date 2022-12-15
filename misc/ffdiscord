@@ -1,0 +1,20 @@
+#!/bin/sh
+
+MAX_VIDEO_SIZE="60000000"
+#MAX_AUDIO_SIZE="4000000"
+
+video=$1
+
+[ -z $video ] && printf "Error: No video file selected\n" && printf "Usage: $0 <video-file>\n"
+
+DURATION=$(ffprobe -hide_banner "$video" -show_entries format=duration -v quiet -of csv="p=0")
+
+#[ -z "$DURATION" ] && printf "Error, ffprobe returned no duration. \"$1\" is possibly not a video file\n"
+
+#printf " $video is a video file and is $DURATION seconds long\n"
+
+ADJUSTED_DURATION=$(printf "%.0f\n" "$DURATION")
+VIDEO_BITRATE=$((MAX_VIDEO_SIZE / ADJUSTED_DURATION))
+#AUDIO_BITRATE=$(echo $((MAX_AUDIO_SIZE / ADJUSTED_DURATION)))
+
+ffmpeg -hide_banner -i "$video" -c:v libvpx-vp9 -row-mt 1 -b:v "$VIDEO_BITRATE" -pix_fmt yuv420p -vf scale=1280:720 -pass 1 -an -f null /dev/null && ffmpeg -hide_banner -i "$1" -c:v libvpx-vp9 -cpu-used 3 -row-mt 1 -b:v "$VIDEO_BITRATE" -pix_fmt yuv420p -vf scale=1280:720 -pass 2 "$1-compressed.mp4"
