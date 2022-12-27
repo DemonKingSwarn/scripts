@@ -11,17 +11,17 @@ menu() {
 
 set_wal() {
 	wal=$(nsxiv "$nsxiv_opts" "$walldir")
-	feh --bg-scale "$wal"
+	swaybg -i "$wal" &
 	#wal -i "$wal"
 }
 
 set_random() {
 	wal=$(ls -d ~/pix/wall/* | shuf -n 1)
-	feh --bg-scale "$wal"
+	swaybg -i "$wal" &
 	#wal -i "$wal"
 }
 
-choice=$(menu | dmenu -p "What You Want To Do?" -l 3 | awk '{print $3}')
+choice=$(menu | tofi | awk '{print $3}')
 
 case $choice in
 	wallpaper)
