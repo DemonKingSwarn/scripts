@@ -9,13 +9,13 @@ menu() {
 	printf "poweroff\n"
 }
 
-choice=$(menu | dmenu -sb "#ee0044" -l 10 -p "⏻ ")
+choice=$(menu | tofi)
 
 case "$choice" in
-	lock) $HOME/.scripts/system/lock.sh ;;
+	lock) $HOME/.scripts/system/waylock.sh ;;
 	suspend) systemctl suspend ;;
 	hibernate) systemctl hibernate ;;
-	logout) bspc quit ;;
+	logout) killall Hyprland ;;
 	reboot) systemctl reboot ;;
 	poweroff) systemctl poweroff ;;
 esac

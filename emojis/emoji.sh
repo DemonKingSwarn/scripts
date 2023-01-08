@@ -5,10 +5,10 @@
 # lol
 DIRNAME=$HOME/.scripts/emojis/
 
-chosen=$(cut -d ';' -f1 "$DIRNAME/emoji.txt" | rofi -dmenu -i -p "Emoji" | sed "s/ .*//")
+chosen=$(cut -d ';' -f1 "$DIRNAME/emoji.txt" | dmenu | sed "s/ .*//")
 
 [ -z "$chosen" ] && exit
 
-printf "$chosen" | xclip -sel c
+printf "$chosen" | wl-copy
 notify-send "$chosen  copied to clipboard"
 
