@@ -1,4 +1,4 @@
 $HOME/.scripts/
 $HOME/.dots/
-$HOME/hdd/pix/wall/
+$HOME/pix/wall/
 $HOME/.emacs.d
