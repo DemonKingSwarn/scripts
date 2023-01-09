@@ -5,7 +5,7 @@
 # lol
 DIRNAME=$HOME/.scripts/emojis/
 
-chosen=$(cut -d ';' -f1 "$DIRNAME/emoji.txt" | dmenu | sed "s/ .*//")
+chosen=$(cut -d ';' -f1 "$DIRNAME/emoji.txt" | rofi -dmenu | sed "s/ .*//")
 
 [ -z "$chosen" ] && exit
 
