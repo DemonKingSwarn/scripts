@@ -1,0 +1,6 @@
+#!/bin/sh
+
+brave --app="https://instagram.com/demonkingswarn" &
+sleep 10
+grim ~/dox/ss/$(uuidgen | awk -F "-" '{print $1}').jpg
+pkill brave
