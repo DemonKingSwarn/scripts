@@ -9,7 +9,7 @@
 SCRIPT_DIR=$(dirname "$(readlink -f -- "$0")")
 
 cmsg="$1"
-[ -z "$1" ] && cmsg="autocommit"
+[ -z "$1" ] && cmsg="autocommit" && desc="an automated commit"
 
 while read p
 do
@@ -22,7 +22,7 @@ do
 	printf "%$(tput cols)s\n" |tr " " "-"
 
 	tput setaf 7
-	bash -c "cd $p && git add . && git commit -m \" $cmsg \" && git push"
+	bash -c "cd $p && git add . && git commit -m \" $cmsg \" -m \" $desc \" && git push"
 
 	tput setaf 2
 	printf "%$(tput cols)s\n" |tr " " "-"
