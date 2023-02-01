@@ -1,6 +1,10 @@
 #!/bin/sh
 
 walp=$(ls -d ~/pix/wall/* | shuf -n 1)
-feh --bg-fill "$walp"
+walp_old="$(cat $HOME/.cache/set_wallpaper.cache)"
+sed -i "s|$walp_old|$walp|g" $HOME/.config/hypr/hyprpaper.conf
+walp_old="$(echo $walp > $HOME/.cache/set_wallpaper.cache)"
+hyprpaper
+#echo "$walp"
 #wal -i "$walp"
 #pywalfox install

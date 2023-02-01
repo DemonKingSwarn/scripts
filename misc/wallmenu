@@ -16,12 +16,11 @@ set_wal() {
 }
 
 set_random() {
-	wal=$(ls -d ~/pix/wall/* | shuf -n 1)
-	swaybg -i "$wal" &
+	$HOME/.scripts/setbg/set_wallpaper &
 	#wal -i "$wal"
 }
 
-choice=$(menu | tofi | awk '{print $3}')
+choice=$(menu | rofi -dmenu | awk '{print $3}')
 
 case $choice in
 	wallpaper)

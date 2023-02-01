@@ -28,6 +28,7 @@ dunst &
 $HOME/.scripts/setbg/setbg &
 $HOME/.config/polybar/launch.sh &
 bspswallow &
+xfdesktop &
 
 #Updates dotfiles
 # $HOME/.scripts/misc/autocommitpressure &
