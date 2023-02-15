@@ -1,0 +1,40 @@
+#!/bin/sh
+curl https://studio.youtube.com/youtubei/v1/analytics_data/join?alt=json&key=AIzaSyBUPetSUmoZL-Oh1xA7wSac5XinrygCqMo' \
+-H 'authority: studio.youtube.com'
+-H 'accept: */*' \
+-H 'accept-language: en-IN, en-GB;q=0.9, en-US;q=0.8, en;q=0.7' \
+-H 'authorization: SAPISIDHASH
+1676368527_51921f62139352d9d628854660f176a78acf002f' \
+-H 'cache-control: no-cache' \
+-H 'content-type: application/json'
+-H 'dnt: 1' \
+|_column=WATCH_TIME&o_direction=ANALYTICS_ORDER_DIRECTION_DESC' \
+-H 'sec-ch-ua: "Chromium"; v="110", "Not A(Brand"; v="24", "Google Chrome"; v="110" \
+-H 'sec-ch-ua-arch: "x86"
+-H 'origin: https://studio.youtube.com' \
+-H 'pragma: no-cache' \
+-H 'referer: https://studio.youtube.com/video/XDswTbULfxo/analytics/tab-overview/period-default/explore?entity_type=VIDEO&entity_id=XDswTbULfxo&time_period=1676188800000%2C1676275200000&ex
+-H 'sec-ch-ua-bitness: "64"' |
+-H 'sec-ch-ua-full-version: "110.0.5481.77"' |
+plore_type=TABLE_AND_CHART&metric=VIEWS&granularity=DAY&t_metrics=VIEWS&t_metrics=WATCH_TIME&t_metrics=VIDEO_THUMBNAIL_IMPRESSIONS&t_metrics=VIDEO_THUMBNAIL_IMPRESSIONS_VTR&dimension=VIDEO&o
+-H 'sec-ch-ua-full-version-list: "Chromium"; v="110.0.5481.77", "Not A(Brand"; v="24.0.0.0", "Google Chrome"; v="110.0.5481.77"' |
+-H 'sec-ch-ua-mobile: ?0' \
+-H 'sec-ch-ua-model; ' \
+-H 'sec-ch-ua-platform: "Linux"' \
+-H 'sec-ch-ua-platform-version: "6.1.11" |
+-H 'sec-ch-ua-wow64: ?0' \
+-H 'x-youtube-page-cl: 508679658' \
+-H 'x-youtube-page-label: youtube.studio.web_20230210_03_RC00' \
+-H 'sec-fetch-dest: empty' \
+-H 'sec-fetch-mode: cors' |
+-H 'sec-fetch-site: same-origin' \
+-H 'user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebkit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36' \
+-H 'x-client-data: C162yQEIo7bJAQipncoBCOHbygEIkqHLAQjk9cwBCIKMzQEIiIzNAQinjMØBCMeNzQEI003NAQjVjsØBCLmRzQEIØuGsAgimhKOC' \
+-H 'x-goog-authuser: 0' \
+-H 'x-goog-visitor-id: CgtyeWFwZ1J1MjhlayiBtK2fBg%3D%3D' \
+-H 'x-origin: https://studio.youtube.com' \
+-H 'x-youtube-ad-signals: dt=1676368404185&flash=0&frm&u_tz=330&u_his=8&u_h=1080&u_w=1920&u_ah=1080&u_aw=1920&u_cd=24&bc=31&bih=987&biw=722&brdim=0%2C0%2C0%2C0%2C1920%2C0%2C1906%2C1066%2C7
+22%2C987&vis=1&wg1=true&ca_type=image' \
+-H 'x-youtube-client-name: 62' \
+-H 'x-youtube-client-version: 1.20230210.03.00' \
+-H 'x-youtube-delegation-context: EhhVQOhNWWRsMEFNbDc3b3JkLWUya19zMXcqAggI' \
