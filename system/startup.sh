@@ -21,7 +21,7 @@ udiskie &
 #redshift &
 
 # rice
-xrdb -merge ~/.Xresources &
+xrdb -merge ~/.config/X11/xresources &
 #picom --animations --animation-window-mass 0.5 --animation-for-open-window zoom --animation-stiffness 350 --experimental-backends -b &
 picom --experimental-backends -b &
 dunst &
