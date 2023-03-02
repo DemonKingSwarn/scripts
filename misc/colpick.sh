@@ -1,6 +1,6 @@
 #!/bin/sh
 
-var=$(colorpicker --one-shot | awk '{print tolower($2)}')
+var=$(hyprpicker | awk '{print $1}')
 echo "$var"
-echo "$var" | tr -d '\n' | xclip -sel c
+echo "$var" | tr -d '\n' | wl-copy
 notify-send " " "<span color='$var' font='26px'><b>$var</b></span><span font='20'>Copied to clipboard</span>."
