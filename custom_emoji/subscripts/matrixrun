@@ -3,8 +3,8 @@
 chosen=$(rofi -theme "~/.config/rofi/icons.rasi" -show file-browser-extended -file-browser-dir ~/Files/emojis -file-browser-cmd echo -file-browser-hide-parent -show-icons)
 #[ -z "$chosen" ] && exit
 #printf "https://gitlab.com/thecashewtrader/emojis/-/raw/main/$chosen" | xclip -sel c
-xclip -selection clipboard -t image/png -i "$chosen"
-xdotool key ctrl+v
-sleep 0.15
-xdotool key Return
+cat "$chosen" | wl-copy
+#xdotool key ctrl+v
+#sleep 0.15
+#xdotool key Return
 
