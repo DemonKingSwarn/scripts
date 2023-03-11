@@ -1,12 +1,9 @@
-https://wiki.archlinux.org
-https://wiki.gentoo.org
-https://monkeytype.com
-https://grapee.jp/en/119846
-https://yewtu.be/c/SwarnadityaSinghTheGamingGuruji
-https://byjus.com/cbse/physics-practicals-class-12/
-https://drive.google.com/file/d/14T41U5IyzcNTffkBqkdjzmPITlv5dAdW/view
-https://mictests.com/
-https://ifconfig.co/
-https://gist.github.com/rrmerugu/ec0f31a4ec87b09e2f35d920daa7ce1c
-https://dl.kookdownload.com/
-https://www.youtube.com/watch?v=0rOJKto87dY
+arch-wiki https://wiki.archlinux.org
+gentoo-wiki https://wiki.gentoo.org
+monkeytype https://monkeytype.com
+recipe https://grapee.jp/en/119846
+blender-CPU-benchmark https://opendata.blender.org/benchmarks/7b75c89f-6984-4356-b3dd-5b9293268a7d/
+blender-GPU-benchmark https://opendata.blender.org/benchmarks/3d5b666b-2d23-4dc0-a8c6-55ead3720781/
+geekbench6-CPU-benchmark https://browser.geekbench.com/v6/cpu/480798
+geekbench6-OpenCL-benchmark https://browser.geekbench.com/v6/compute/179633
+geekbench6-Vulkan-benchmark https://browser.geekbench.com/v6/compute/179639
