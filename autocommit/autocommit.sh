@@ -9,7 +9,7 @@
 SCRIPT_DIR=$(dirname "$(readlink -f -- "$0")")
 
 cmsg="$1"
-[ -z "$1" ] && cmsg="autocommit" && desc="an automated commit"
+[ -z "$1" ] && cmsg="$(curl -s "https://raw.githubusercontent.com/ngerakines/commitment/master/commit_messages.txt" | shuf -n1)" && desc="an automated commit"
 
 while read p
 do
