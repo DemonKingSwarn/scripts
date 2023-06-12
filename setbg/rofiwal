@@ -1,0 +1,12 @@
+#!/bin/sh
+
+killall hyprpaper
+
+old_wall=""
+
+new_wall=$(rofi -theme ~/.config/rofi/styles/image-preview.rasi -show file-browser-extended -file-browser-dir ~/pix/wall -file-browser-cmd basename -file-browser-hide-parent)
+
+sed -i "s/$old_wall/$new_wall/g" $HOME/.config/hypr/hyprpaper.conf
+sed -i "s/$old_wall/$new_wall/" $HOME/.scripts/setbg/rofiwal
+
+hyprpaper & disown
