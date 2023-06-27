@@ -1,7 +1,42 @@
 #!/bin/sh
 
-[ -z "$1" ] && printf "Enter url: " && read -r url || url=$1
+image_cache_dir="/tmp/youtube"
+application_dir="$HOME/.local/share/applications/youtube"
+test -d "$image_cache_dir" || mkdir "$image_cache_dir"
+test -d "$application_dir" || mkdir "$application_dir"
 
-fetch=$(curl -sL "$url&pbj=1" -H"x-youtube-client-name: 1" -H"x-youtube-client-version: 2.20230102.00.00" | sed -nE 's|.*251,"url":"([^"]*)".*|\1|p' | sed 's|\\u0026|\&|g')
+cookie=$(cat ~/.config/ytfzf/recommended-cookie)
+response="$(curl -s "https://www.youtube.com" -H "cookie: $cookie" | sed "s@}}}@\n\n\n@g" | sed -nE "s@.*\"content\":\{\"videoRenderer\".*\"videoId\":\"([^\"]*)\".*\"thumbnails\":\[\{\"url\":\"([^\"]*)\".*\"text\":\"(.*)\"\}.*@\2\t\1\t\3@p" | sed 's/\\\"/"/g')"
 
-mpv "$fetch"
+cleanup() {
+    rm -rf "$images_cache_dir"
+  rm -rf "$applications_dir"
+    exit
+}
+trap cleanup EXIT INT TERM
+
+generate_desktop() {
+cat <<EOF
+[Desktop Entry]
+Name=$1
+Exec=echo %k %c
+Icon=$2
+Type=Application
+Categories=youtube;
+EOF
+}
+
+printf "%s\n" "$response" | while read -r cover_url id title; do
+    curl -s -o "$images_cache_dir/$id.jpg" "$cover_url" &
+  entry="$applications_dir/$id.desktop"
+  generate_desktop "$title" "$images_cache_dir/$id.jpg" > "$entry" &
+done
+wait && sleep 2
+
+choice=$(rofi -show drun -drun-categories youtube -show-icons -theme ~/.config/rofi/styles/image-preview.rasi | sed -nE "s@.*/(.*)\.desktop@\1@p")
+rm -rf "$applications_dir"
+[ -z "$choice" ] && exit
+id=$(printf "%s" "$choice" | cut -d\  -f1)
+title="$(printf "%s" "$choice" | cut -d\  -f2-)"
+
+mpv "https://www.youtube.com/watch?v=$id" --force-media-title="$title"

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ch=$(ps aux | sed -n '1!p' | dmenu -i -l 15)
+ch=$(ps aux | sed -n '1!p' | fzf)
 pid=$(echo "$pid" | awk '{print $2}')
 kill -9 "$pid"
-notify-send "💀 u kill process, u monster 🇧🇷"
+notify-send "💀 u kill process, u monster 👾"

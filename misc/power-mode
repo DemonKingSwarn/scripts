@@ -1,0 +1,25 @@
+#!/bin/sh
+
+menu() {
+    printf "performance\n"
+    printf "balanced\n"
+    printf "power-saver\n"
+}
+
+send_notification() {
+    notify-send "power-mode" "$(powerprofilesctl get)"
+}
+
+ch=$(menu | rofi -dmenu -p "Select: " -i -l 3)
+
+case $ch in
+    performance)
+        powerprofilesctl set performance && send_notification;;
+    balanced)
+        powerprofilesctl set balanced && send_notification;;
+    power-saver)
+        powerprofilesctl set power-saver && send_notification;;
+    *)
+        echo "nothing selected"
+        exit 0;;
+esac

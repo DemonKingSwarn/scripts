@@ -26,14 +26,14 @@ menu() {
 }
 
 start_radio() {
-	dunstify "Starting radio" "Playing station: $1."
+	notify-send "Starting radio" "Playing station: $1."
 }
 
 end_radio() {
-	dunstify "Stopping radio" "You have quit radio."
+	notify-send "Stopping radio" "You have quit radio."
 }
 
-choice=$(menu | dmenu -p "Choose radio station:" -l 25 | cut -d. -f1) || exit
+choice=$(menu | rofi -dmenu -p "Choose radio station:" -l 15 | cut -d. -f1) || exit
 
 case $choice in 
 	"Quit")
