@@ -2,7 +2,7 @@
 
 killall hyprpaper
 
-old_wall="wallhaven-6d21rw.png"
+old_wall="dracula-mnt-282a36.png"
 
 new_wall=$(rofi -theme ~/.config/rofi/styles/image-preview.rasi -show file-browser-extended -file-browser-dir ~/pix/wall -file-browser-cmd basename -file-browser-hide-parent)
 

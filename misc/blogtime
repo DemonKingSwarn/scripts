@@ -1,0 +1,9 @@
+#!/bin/sh
+
+title="$@"
+save="$title"
+title="$(printf "$title" | sed 's/ /-/g')"
+title="$(printf "$(date '+%Y-%m-%d')-$title")"
+cd "$HOME/dox/blog/_posts/posts"
+echo "---\nlayout: post\ntitle: $save\nupdated: $(date '+%Y-%m-%d')\ncategory: posts\n---" > "$title.md"
+"$EDITOR" "$title.md"

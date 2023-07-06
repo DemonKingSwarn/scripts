@@ -1,12 +1,12 @@
 #!/bin/sh
-mkdir -p "$HOME/hdd/dox/0x0"
+mkdir -p "$HOME/dox/0x0"
 
-file=$(find $HOME/hdd/pix -type f | tofi)
+file=$(find $HOME/pix -type f | rofi -dmenu)
 curl -F "file=@$file" 0x0.st | wl-copy
 notify-send "Your file uploaded to 0x0.st server :)"
 
-url=$(echo "$(xclip -sel c -o)")
+url=$(echo "$(wl-paste)")
 time=$(date '+%d-%m-%y-%H_%M_%S')
 title="[$time] 	$url 	${file}"
-echo "$title" >> "$HOME/hdd/dox/0x0/0x0-logs.txt"
+echo "$title" >> "$HOME/dox/0x0/0x0-logs.txt"
 
