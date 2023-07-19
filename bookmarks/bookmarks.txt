@@ -7,3 +7,4 @@ blender-GPU-benchmark https://opendata.blender.org/benchmarks/3d5b666b-2d23-4dc0
 geekbench6-CPU-benchmark https://browser.geekbench.com/v6/cpu/480798
 geekbench6-OpenCL-benchmark https://browser.geekbench.com/v6/compute/179633
 geekbench6-Vulkan-benchmark https://browser.geekbench.com/v6/compute/179639
+erpportal https://erpportal.bitmesra.ac.in/studentAcademicFeesPayment.htm
