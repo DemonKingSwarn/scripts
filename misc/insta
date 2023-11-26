@@ -1,6 +1,6 @@
 #!/bin/sh
 
-brave --app="https://instagram.com/demonkingswarn" &
+Brave-stable-v1.58.135-x86_64.AppImage --app="https://instagram.com/anushkasen0408/" &
 sleep 10
 grim ~/dox/ss/$(uuidgen | awk -F "-" '{print $1}').jpg
 pkill brave
