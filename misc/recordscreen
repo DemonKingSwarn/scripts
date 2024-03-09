@@ -17,7 +17,7 @@ case $ch in
     a)
         wf-recorder --audio=alsa_output.pci-0000_00_1f.3.analog-stereo.monitor --force-yuv --file="$path/$name.mkv";;
     m)
-        wf-recorder --audio=alsa_input.usb-RHF-211012_SPCA2650_AV_Camera_01.00.00-02.iec958-stereo --force-yuv --file="$path/$name.mkv";;
+        wf-recorder --audio=alsa_output.pci-0000_00_1f.3.analog-stereo --force-yuv --file="$path/$name.mkv";;
     n)
         wf-recorder --force-yuv -f "$path/$name.mkv";;
     q)
