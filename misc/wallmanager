@@ -3,7 +3,7 @@
 hyprctl hyprpaper unload all
 killall hyprpaper
 
-old="/home/demonkingswarn/pix/wall/44.jpg"
+old="/home/demonkingswarn/pix/wall/121.jpg"
 
 new="$(nsxiv -tfpo -z 200 ~/pix/wall/*.jpg)"
 
