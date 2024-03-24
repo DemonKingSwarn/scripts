@@ -1,0 +1,13 @@
+#!/bin/sh
+
+hyprctl hyprpaper unload all
+killall hyprpaper
+
+old="/home/demonkingswarn/pix/wall/44.jpg"
+
+new="$(nsxiv -tfpo -z 200 ~/pix/wall/*.jpg)"
+
+sed -i "s|$old|$new|g" /home/demonkingswarn/.config/hypr/hyprpaper.conf 
+sed -i "s|$old|$new|g" /home/demonkingswarn/.local/bin/wallmanager
+
+hyprpaper &
