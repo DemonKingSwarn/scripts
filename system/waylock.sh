@@ -5,9 +5,9 @@ cleanup(){
 }
 
 
-IMAGEDIR=/tmp/uwu.png
+IMAGEDIR="$HOME/.cache/lock.png"
 grim $IMAGEDIR
-convert $IMAGEDIR -scale 10% -scale 1000% $IMAGEDIR
+convert "$IMAGEDIR" -filter Gaussian -blur 0x5 blur.png
 hyprlock
 
 trap cleanup EXIT INT TERM
