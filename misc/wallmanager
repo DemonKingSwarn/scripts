@@ -1,10 +1,11 @@
 #!/bin/sh
 
-hyprctl hyprpaper unload all
-killall hyprpaper
+#hyprctl hyprpaper unload all
+#killall hyprpaper
 
 new="$(nsxiv -tfpo -z 200 ~/pix/wall/*.jpg)"
 
 cp "$new" "$HOME/.cache/wall.jpg"
 
-hyprpaper &
+swww img $HOME/.cache/wall.jpg --transition-type center --transition-fps 30
+#hyprpaper &
