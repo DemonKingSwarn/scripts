@@ -2,6 +2,7 @@
 
 #hyprctl hyprpaper unload all
 #killall hyprpaper
+swww clear
 
 new="$(nsxiv -tfpo -z 200 ~/pix/wall/*.jpg)"
 
