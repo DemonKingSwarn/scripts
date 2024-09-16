@@ -1,4 +1,5 @@
 $HOME/.scripts/
 $HOME/.dots/
 $HOME/.emacs.d
+$HOME/.config/nvim
 $HOME/pix/wall
