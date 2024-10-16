@@ -1,5 +1,9 @@
 #!/bin/sh
 
-file="$HOME/pix/wall/111.jpg"
-feh --bg-fill "$file"
-wal -i "$file"
+swww clear
+
+[ -f "$1" ] && cp "$1" "$HOME/.cache/wall.jpg" && notify-send -i "$HOME/.cache/wall.jpg" "wallpaper changed"
+
+[ ! -f "$1" ] && wall=$(ls $HOME/pix/wall/*.jpg | shuf -n 1); cp "$wall" "$HOME/.cache/wall.jpg" && notify-send -i "$wall" "random wallpaper chosen"
+
+swww img "$HOME/.cache/wall.jpg" --transition-type center --transition-fps 30
