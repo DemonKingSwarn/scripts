@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# Total duration in seconds
+duration=240
+
+echo "Timer started for 4 minutes..."
+
+while [ "$duration" -gt 0 ]; do
+    minutes=$((duration / 60))
+    seconds=$((duration % 60))
+
+    printf "\rTime remaining: %02d:%02d" "$minutes" "$seconds"
+
+    duration=$((duration - 1))
+
+    sleep 1
+done
+
+echo -e "\nTime's up! 4 minutes have passed."

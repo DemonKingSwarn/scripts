@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ -z $(command -v $*) ]; then
+  printf "%s\n" "command not found"
+  exit 127
+else
+  wezterm -e bash -c "$*; tput setaf 5 bold; read -p \"press any key to quit!\" -s -n 1"
+fi
