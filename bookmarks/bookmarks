@@ -5,5 +5,5 @@ SCRIPT_DIR=$(dirname "$(readlink -f -- "$0")")
 sel=$(cat "$SCRIPT_DIR/bookmarks.txt" | awk '{print $1}' | rofi -theme $HOME/.config/rofi/styles/prompt.rasi -dmenu -i -p "Select:")
 [ -z "$sel" ] && exit
 link=$(grep "$sel" "$SCRIPT_DIR/bookmarks.txt" | awk '{print $2}')
-floorp "$link" &
+brave "$link" &
 #qutebrowser "$link" &

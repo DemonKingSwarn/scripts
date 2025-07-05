@@ -1,3 +1,4 @@
+rupee ₹
 arch-wiki https://wiki.archlinux.org
 gentoo-wiki https://wiki.gentoo.org
 monkeytype https://monkeytype.com
