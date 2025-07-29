@@ -1,0 +1,11 @@
+#!/bin/sh
+
+cache_file="${XDG_CACHE_HOME:-$HOME/.cache}/wifi"
+
+if [ ! -f "$cache_file" ]; then
+  nmcli radio wifi off
+  touch "$cache_file"
+else
+  nmcli radio wifi on
+  rm "$cache_file"
+fi
