@@ -1,0 +1,8 @@
+/* Custom color mappings for Waybar */
+@define-color bg_primary #101a1eCC;
+@define-color border_primary #70858f;
+@define-color text_primary #a0becd;
+@define-color text_critical #957256;
+@define-color text_blink #a0becd;
+@define-color bg_transparent transparent;
+@define-color color_transparent transparent;
