@@ -1,7 +1,7 @@
 #!/bin/sh
 
 nsxiv_opts="-tfpo"
-walldir="$HOME/hdd/pix/wall"
+walldir="$HOME/pix/wall"
 
 menu() {
 	printf "%s\n" "set a wallpaper"
@@ -9,18 +9,24 @@ menu() {
 	printf "%s\n" "exit"
 }
 
+reload_swww() {
+  swww clear
+  swww img "$HOME/.cache/wall.jpg" --transition-type center --transition-fps 30
+}
+
 set_wal() {
-	wal=$(nsxiv "$nsxiv_opts" "$walldir")
-	swaybg -i "$wal" &
-	#wal -i "$wal"
+	wal=$(nsxiv "$nsxiv_opts" $walldir/*.jpg)
+  cp "$wal" "$HOME/.cache/wall.jpg"
+  reload_swww
 }
 
 set_random() {
-	$HOME/.scripts/setbg/set_wallpaper &
-	#wal -i "$wal"
+  rand_wall="$(ls $walldir/*.jpg | shuf -n 1)"
+	cp "$rand_wall" "$HOME/.cache/wall.jpg"
+  reload_swww
 }
 
-choice=$(menu | rofi -dmenu | awk '{print $3}')
+choice=$(menu | rofi -dmenu | cut -d' ' -f3)
 
 case $choice in
 	wallpaper)

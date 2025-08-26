@@ -1,0 +1,16 @@
+#!/bin/sh
+
+if [ -z "$1" ]; then
+  echo "Usage:"
+  echo "$0 <input> <output> \"text you want to add\""
+  exit 1
+fi
+
+magick -density 288 "$1" -blur 0x2.5 "$2"
+#magick "$2" ./geforce_small.png -gravity southwest -compose over -composite "$2.tmp"
+#mv "$2.tmp" "$2"
+magick -density 288 -bordercolor "#FF5757" "$2" -border 20 "$2.tmp"
+mv "$2.tmp" "$2"
+magick "$2" -font "Montserrat-ExtraBold" -fill "white" -pointsize 64 -gravity North -annotate +0+52 "$3" "$2.tmp"
+magick "$2.tmp" -resize 1280x720 "$2"
+\rm "$2.tmp"
