@@ -7,3 +7,4 @@ new="$(nsxiv -tfpo -z 200 ~/pix/wall/*.jpg)"
 cp "$new" "$HOME/.cache/wall.jpg"
 
 swww img $HOME/.cache/wall.jpg --transition-type center --transition-fps 30
+matugen image $HOME/.cache/wall.jpg
