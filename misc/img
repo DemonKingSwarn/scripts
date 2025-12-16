@@ -10,4 +10,4 @@
 
 [ -z "$1" ] && echo "Usage: $0 <image>" && exit 1
 
-chafa "$1" -f kitty
+chafa "$1" -f sixel
