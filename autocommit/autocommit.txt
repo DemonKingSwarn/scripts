@@ -1,5 +1,6 @@
 $HOME/.scripts/
 $HOME/.dots/
 $HOME/.config/nvim
+$HOME/.config/tmux
 $HOME/pix/wall
 $HOME/.local/share/fonts
