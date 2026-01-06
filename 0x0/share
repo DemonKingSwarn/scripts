@@ -2,7 +2,7 @@
 mkdir -p "$HOME/dox/0x0"
 
 file=$(find $HOME/pix -type f | rofi -dmenu)
-curl -F "file=@$file" http://0x0.st | wl-copy
+curl -s -F "file=@$file" https://upfast.cronyakatsuki.xyz | wl-copy
 notify-send "Your file uploaded to 0x0.st server :)"
 
 url=$(echo "$(wl-paste)")
