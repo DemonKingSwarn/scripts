@@ -82,6 +82,7 @@
 😯 E1.0 hushed face
 😲 E0.6 astonished face
 😳 E0.6 flushed face
+🫪 E0.6 distorted face
 🥺 E11.0 pleading face
 🥹 E14.0 face holding back tears
 😦 E1.0 frowning face with open mouth
@@ -1957,6 +1958,7 @@
 🚴🏾‍♀️ E4.0 woman biking: medium-dark skin tone
 🚴🏿‍♀️ E4.0 woman biking: dark skin tone
 🚵 E1.0 person mountain biking
+🛘 E1.0 landslide
 🚵🏻 E1.0 person mountain biking: light skin tone
 🚵🏼 E1.0 person mountain biking: medium-light skin tone
 🚵🏽 E1.0 person mountain biking: medium skin tone
@@ -2429,6 +2431,7 @@
 🐵 E0.6 monkey face
 🐒 E0.6 monkey
 🦍 E3.0 gorilla
+🫈 E3.0 big foot
 🦧 E12.0 orangutan
 🐶 E0.6 dog face
 🐕 E0.7 dog
@@ -2525,6 +2528,7 @@
 🦖 E5.0 T-Rex
 🐳 E0.6 spouting whale
 🐋 E1.0 whale
+🫍 E1.0 orca
 🐬 E0.6 dolphin
 🦭 E13.0 seal
 🐟 E0.6 fish
@@ -2907,6 +2911,7 @@
 🌠 E0.6 shooting star
 🌌 E0.6 milky way
 ☁️ E0.6 cloud
+🫯 E0.6 fight cloud
 ⛅ E0.6 sun behind cloud
 ⛈️ E0.7 cloud with lightning and rain
 🌤️ E0.7 sun behind small cloud
@@ -3085,6 +3090,7 @@
 🎷 E0.6 saxophone
 🪗 E13.0 accordion
 🎸 E0.6 guitar
+🪊 E0.6 trombone
 🎹 E0.6 musical keyboard
 🎺 E0.6 trumpet
 🎻 E0.6 violin
@@ -3147,6 +3153,7 @@
 🔖 E0.6 bookmark
 🏷️ E0.7 label
 💰 E0.6 money bag
+🪎 E0.6 treasure chest
 🪙 E13.0 coin
 💴 E0.6 yen banknote
 💵 E0.6 dollar banknote
