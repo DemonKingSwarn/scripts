@@ -1,10 +1,11 @@
 #!/bin/sh
 
-swww clear
+awww clear
 
-new="$(nsxiv -tfpo -z 200 ~/pix/wall/*.jpg)"
+new="$(nsxiv -tfpo -z 200 ~/pix/wall/*.jxl)"
+wall="$HOME/.cache/wall.jxl"
 
-cp "$new" "$HOME/.cache/wall.jpg"
+cp "$new" "$wall"
 
-swww img $HOME/.cache/wall.jpg --transition-type center --transition-fps 30
-matugen image $HOME/.cache/wall.jpg
+awww img $wall --transition-type center --transition-fps 30
+matugen image $wall
