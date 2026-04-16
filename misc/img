@@ -10,4 +10,6 @@
 
 [ -z "$1" ] && echo "Usage: $0 <image>" && exit 1
 
-chafa "$1" -f sixel
+image_proto=$(printf "sixel\nkitty" | fzf)
+
+chafa "$1" -f $image_proto
