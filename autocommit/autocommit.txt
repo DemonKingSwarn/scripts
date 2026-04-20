@@ -2,6 +2,5 @@ $HOME/.scripts/
 $HOME/.dots/
 $HOME/.odysseus/
 $HOME/.config/nvim
-$HOME/.config/tmux
 $HOME/pix/wall
 $HOME/.local/share/fonts
