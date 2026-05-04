@@ -2,5 +2,5 @@ $HOME/.scripts/
 $HOME/.dots/
 $HOME/.odysseus/
 $HOME/.config/nvim
-$HOME/pix/wall
+$HOME/media/pix/wall
 $HOME/.local/share/fonts

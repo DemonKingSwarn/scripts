@@ -2,7 +2,7 @@
 
 awww clear
 
-new="$(nsxiv -tfpo -z 200 ~/pix/wall/*.jxl)"
+new="$(nsxiv -tfpo -z 200 ~/media/pix/wall/*.jxl)"
 wall="$HOME/.cache/wall.jxl"
 
 cp "$new" "$wall"
