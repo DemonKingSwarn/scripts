@@ -28,8 +28,8 @@ do
 	printf "%$(tput cols)s\n" |tr " " "-"
 	echo "Processed \`$p\`"
 	printf "%$(tput cols)s\n" |tr " " "-"
-    
-done < $HOME/.scripts/autocommit/autocommit.txt
+
+done < /home/swarn/.scripts/autocommit/autocommit.txt
 
 tput setaf 4
 printf "%$(tput cols)s\n" |tr " " "="
