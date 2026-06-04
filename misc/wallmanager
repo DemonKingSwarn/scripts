@@ -1,11 +1,15 @@
 #!/bin/sh
 
-awww clear
-
-new="$(nsxiv -tfpo -z 200 ~/media/pix/wall/*.jxl)"
+new="$(rofi -show file-browser-extended -file-browser-dir ~/media/pix/wall -file-browser-cmd basename -file-browser-hide-parent -show-icons -config ~/.config/rofi/wallpaper.rasi)"
 wall="$HOME/.cache/wall.jxl"
 
-cp "$new" "$wall"
+if [ -z "$new" ]; then
+  notify-send "wallmanager" "nothing selected..."
+  exit 1
+else
+  new="$HOME/media/pix/wall/$new"
+  awww clear
+  cp "$new" "$wall"
+  awww img $wall --transition-type center --transition-fps 60
+fi
 
-awww img $wall --transition-type center --transition-fps 30
-matugen image $wall
