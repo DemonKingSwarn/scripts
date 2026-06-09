@@ -8,8 +8,10 @@
 #   read
 #)
 
-[ -z "$1" ] && echo "Usage: $0 <image>" && exit 1
 
-image_proto=$(printf "sixel\nkitty" | fzf)
+[ -z "$2" ] && echo "Usage: $0 <protocol> <image>" && exit 1
 
-chafa "$1" -f $image_proto
+image_proto="$1"
+file="$2"
+
+chafa "$file" -f "$image_proto"
