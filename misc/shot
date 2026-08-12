@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [[ "$1" == "full" ]]; then
+  OMASNAP_SCREENSHOT_DIR="$HOME/media/pix/ss" OMASNAP_OCR_LANGS="eng" omasnap fullscreen
+else
+  OMASNAP_OCR_LANGS="eng" omasnap region
+fi
